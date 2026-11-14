@@ -1,0 +1,15 @@
+VodiWalker deployment notes
+
+1. Extract this ZIP.
+2. Upload the CONTENTS of this folder to the ROOT of the GitHub repository (do not upload the enclosing folder).
+3. Ensure Shiprr is connected to that repository and the main branch.
+4. Trigger a fresh deployment.
+
+The repository root includes Dockerfile, .python-version, Procfile, main.py,
+app.py, and requirements.txt. The Dockerfile pins Python 3.11 and starts
+through app.py. Do not set a conflicting custom start command in Shiprr;
+if a custom command is required, use: python app.py
+
+A successful local syntax/import check does not guarantee a successful remote
+deployment. If Shiprr still fails, the final ERROR/Traceback lines from its
+Build or Runtime logs are needed to identify environment-specific issues.
